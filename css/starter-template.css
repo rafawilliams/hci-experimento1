@@ -1,0 +1,13 @@
+body {
+    padding-top: 5rem;
+}
+.starter-template {
+padding: 3rem 1.5rem;
+text-align: center;
+}
+#cuadro-experimento{
+    width: 250px;
+    height: 250px;
+    border: #000 solid 1px;
+    margin: 20px auto;
+}  
