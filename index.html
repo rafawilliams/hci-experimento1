@@ -24,27 +24,41 @@
       <div id="app" class="starter-template">
         <h2>Experimento: Estímulo Visual.</h2>
         
-        <div id="cuadro-experimento">
-
+        <div id="cuadro-experimento" :class="getcolor">
+            
+        </div>
+        <div class="resultado">
+            <ul class="list-group">
+                <li class="list-group-item" v-for="item in resultadoTr">
+                    {{item}} ms
+                </li>
+            </ul>
+            <div v-if="resultadoTr.length == 10">
+                <button class="btn btn-info" @click="crearCsv">Generar Csv</button>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <button type="button" class="btn btn-primary">Iniciar experimento</button>
+                <button type="button" @click="iniciar" class="btn btn-primary" :disabled="disabledBoton">Iniciar experimento</button>
             </div>
             <div class="col-md-4"></div>
         </div>
+        <div>
+            <p class="text-md-center text-success" v-if="resultadoTr.length == 10"> Fin del experimento</p>
+        </div>
+        
       </div>
       
     </main>
-    
+    <script src="js/experimento.js"></script>
     <script>
-        var app = new Vue({
+       /* var app = new Vue({
         el: '#app',
             data: {
             message: 'Hello Vue!'
             }
-        })
+        })*/
     </script>
 </body>
 </html>
